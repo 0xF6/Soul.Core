@@ -1,0 +1,10 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\.soul]
+@="SoulSharp"
+[HKEY_CLASSES_ROOT\SoulSharp]
+@="Source Code SoulSharp"
+[HKEY_CLASSES_ROOT\SoulSharp\shell\open\command]
+@="\"C:\\Users\\Callada\\AppData\\Local\\Code\\app-0.7.10\\Code.exe\" \"%1\""
+[HKEY_CLASSES_ROOT\SoulSharp\DefaultIcon]
+@="\"C:\\CAD\\System32\\monitor\\script_32xLG.ico\""

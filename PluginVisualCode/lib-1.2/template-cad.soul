@@ -1,0 +1,33 @@
+#include "Soul.sh" 			// Используем библиотеку души
+#include "Core.sh" 			// Используем библиотеку оружия
+
+// Метод входа
+//   Принимает:
+//// cad - Casting Assistant Device (Девайс помощи Каста) - Магическое Устройство\Артифакт\Оружие 
+// Этом метод является основным методом управления оружием
+// Тут задаются параметры процедурной магии
+event void Input(CAD CastingDevice)
+{
+	// Проверяем, есть-ли у души достаточный запас маны
+	// Если есть, то продолжаем работу 
+	if(this.Soul.Mana >= (Stone.mana + Fire.mana + Mix(2, Mass(Stone, Fire)).mana + Impuls(Mass(Stone, Fire)).mana))
+	{
+		CastingDevice.Cast(Stone); 		// Процедура создания камня
+		CastingDevice.Cast(Fire); 		// Процедура создания огня
+		CastingDevice.Mixing(Infernum);	// Процедура смешивания прошлых процедур для получения эффекта
+		CastingDevice.Impuls(Forward);	// Процедура придачи импульса камню, по направлению прицела
+	}
+}
+// Метод возникающий при ошибке магического кристалла
+event void Error(CAD CastingDevice, aix crystall)
+{
+	// Выводим из строя магический кристалл
+	// Необходимо для того что-бы кристалл с ошибкой не повредил оружие или не навредил хозяину
+	CastingDevice.Rejection(crystall);
+}
+// Метод возникающий при работе "CAD", для получения сообщений работы
+event void Message(CAD CastingDevice, int sig)
+{
+	// Отправляем душе сообщение(Отправляем на интерфейс игрока)
+	this.Soul.Signal(sig);
+}

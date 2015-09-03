@@ -1,0 +1,10 @@
+using <Soul.Framework.dll>();
+signature MAIN0 0x000000000005F; signature RTX0 0x0000001523FF0045;
+signature MAIN1 0x000000002F6AF; signature RTX1 0x000000000E2A8637;
+signature MAIN2 0x0000000B99A5A; signature RTX2 0x0000000048619902;
+signature MAIN3 0x000000C88CEA7; signature RTX3 0x000000001124E5F9;
+signature MAIN4 0x000000B31A4A9; signature RTX4 0x0000000009997C10;
+signature MAIN5 0x0000010E3D50B; signature RTX5 0x0000000030A86002;
+
+packages(name:"Soul.sh", key:"null", assembly:"Soul.Framework.dll"){};
+packages(name:"Core.sh", key:"null", assembly:"Soul.Framework.dll"){};
