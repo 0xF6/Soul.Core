@@ -1,20 +1,20 @@
-// =========================================================================//==============================================================//
+﻿// =========================================================================//==============================================================//
 //                                                                          //                                                              //         
-// Source="app\plugins\vs.language.soulsharp.packages\SoulSharpPackagesDef.js"             Copyright © Of Fire Twins Wesp 2015              //
+// Source="app\plugins\vs.language.soulsharp\template.js"                   //             Copyright © Of Fire Twins Wesp 2015              //
 // Author= {"Callada", "Another"}                                           //                                                              //
 // Project="Soul.Language"                                                  //                  Alise Wesp & Yuuki Wesp                     //
-// Version File="1.0"                                                       //                                                              //
+// Version File="1.2"                                                       //                                                              //
 // =========================================================================//==============================================================//
 'use strict';
 define(["require", "exports"], function (require, exports) {
     exports.language = {
-        displayName: ' ',
-        name: ' ',
-        defaultToken: ' ',
-        lineComment: '\\ ',
-        blockCommentStart: '\\*',
-        blockCommentEnd: '*\\',
-        wordDefinition: /(-?\d*\.\d\w*)|([^\`\~\!\#\$\%\^\&\*\(\)\-\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\?\s]+)/g,
+        displayName:        ' ',
+        name:               ' ',
+        defaultToken:       ' ',
+        lineComment:        '\\ ',
+        blockCommentStart:  '\\*',
+        blockCommentEnd:    '*\\',
+        wordDefinition:     /(-?\d*\.\d\w*)|([^\`\~\!\#\$\%\^\&\*\(\)\-\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\?\s]+)/g,
         autoClosingPairs: [
             ['"', '"'],
             ['\'', '\''],
@@ -23,24 +23,22 @@ define(["require", "exports"], function (require, exports) {
             ['(', ')']
         ],
         keywords: [
-            'signature', 'bin', 'assembly', 'key', 'name'
+            ' '
         ],
-        // =
         aligments: [
-            'packages'
+            ' '
         ],
         preprocs: [
             ' '
         ],
         codecs: [
-            'codec'
+            ' '
         ],
         gates: [
-            'gate'
+            ' '
         ],
-        // =
         namespaceFollows: [
-            'using'
+            ' '
         ],
         operators: [
             '=', '??', '||', '&&', '|', '^', '&', '==', '!=', '<=', '>=', '<<',
@@ -58,20 +56,18 @@ define(["require", "exports"], function (require, exports) {
                 // identifiers and keywords
                 [/\@?[a-zA-Z_]\w*/, {
                     cases: {
-                        '@namespaceFollows': { token: 'keyword.$0', next: '@namespace' },
-                        '@keywords': { token: 'keyword.$0', next: '@qualified' },
-                        '@aligments': { token: 'soul.aligment', next: '@qualified' },
-                        '@preprocs': { token: 'soul.preproc', next: '@qualified' },
-                        '@codecs': { token: 'soul.codec', next: '@qualified' },
-                        '@gates': { token: 'soul.gate', next: '@qualified' },
-                        '@default': { token: 'identifier', next: '@qualified' },
+                        '@namespaceFollows' : { token: 'keyword.$0', next: '@namespace' },
+                        '@keywords'         : { token: 'keyword.$0', next: '@qualified' },
+                        '@aligments'        : { token: 'soul.aligment', next: '@qualified' },
+                        '@preprocs'         : { token: 'soul.preproc', next: '@qualified' },
+                        '@codecs'           : { token: 'soul.codec', next: '@qualified' },
+                        '@gates'            : { token: 'soul.gate', next: '@qualified' },
+                        '@default'          : { token: 'identifier', next: '@qualified' },
                     }
                 }],
                 { include: '@whitespace' },
-                // -------------
                 [/<.*>/, 'annotation'],
                 [/^#(if|else|endif|include|pragma|connect)/, 'soul.preproc'],
-                // -------------
                 [/[{}()\[\]]/, '@brackets'],
                 [/[<>](?!@symbols)/, '@brackets'],
                 [/@symbols/, 'delimiter'],
@@ -89,7 +85,7 @@ define(["require", "exports"], function (require, exports) {
                 [/'[^\\']'B?/, 'string'],
                 [/(')(@escapes)(')/, ['string', 'string.escape', 'string']],
                 [/'/, 'string.invalid'],
-                [/@symbols/, { cases: { '@operators': 'delimiter', '@default': '' } }],
+                [/@symbols/, { cases: { '@operators': 'delimiter', '@default': '' } }]
             ],
             qualified: [
                  [/[a-zA-Z_][\w]*/,
