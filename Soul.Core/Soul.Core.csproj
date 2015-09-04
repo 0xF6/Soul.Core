@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Build\BuildMessage.cs" />
+    <Compile Include="LineProc.cs" />
     <Compile Include="Rex\RegexBase.cs" />
     <Compile Include="SoulPath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

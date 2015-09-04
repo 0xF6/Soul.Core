@@ -15,6 +15,8 @@ namespace Soul.Core
 {
     public class LineProc
     {
+        public ulong Line;
+        //
         public bool isMethod;
         public bool isPreProcIncludeAssembly;
         public bool isPreProcIncludeSoulHeader;
