@@ -3,7 +3,7 @@
 //                                                                          //             Copyright © Of Fire Twins Wesp 2015              //
 // Author= {"Callada", "Another"}                                           //                                                              //
 // Project="Soul.Language"                                                  //                  Alise Wesp & Yuuki Wesp                     //
-// Version File="1.0"                                                       //                                                              //
+// Version File="1.5"                                                       //                                                              //
 // License="root\\LICENSE", LicenseType="MIT"                               //                                                              //
 // =========================================================================//==============================================================//
 using System;
@@ -20,7 +20,7 @@ namespace Soul.Core.Rex
         {
             public const string IncludeAssembly     = "(^#(include\\s)(<[a-zA-Z].*\\.dll>))";                               // Include all Assembly     - (mgU)
             public const string IcludeSoulHeader    = "(^#(include\\s)(['][a-zA-Z].*\\.sh[']|[\"][a-zA-Z].*\\.sh[\"]))";    // Include all Soul Header  - (mgU)
-            public const string PragmaSet           = "(^#(pragma\\s)(lock\\s(\".*\")|meta\\s(\".*\")|key\\s(\".*\")))";    // Setting Soul Assembly    - (Umg)
+            public const string PragmaSet           = "(^#(pragma\\s)(lock\\s(\".*\")|metta\\s(\".*\")|key\\s(\".*\")))";   // Setting Soul Assembly    - (Umg)
         }
         public class Word
         {
