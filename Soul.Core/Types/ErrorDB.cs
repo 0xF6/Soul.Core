@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Linq;
 
 namespace Soul.Core.Types
 {
@@ -92,33 +93,17 @@ namespace Soul.Core.Types
         SS2515, // Ожидание имени поля
         SS2516, // Ожидание имени контейнера
         SS2517, // Ожидаемое имя класса/структуры/метода
+        SS2518, // Ожидаемое имя сборки/файла
         SS2520, // Необъявленное поле/перечесление/структура/алигмента
-        SS2521, 
-        SS2522,
-        SS2523,
-        SS2524,
-        SS2525,
-        SS2526,
-        SS2527,
-        SS2528,
-        SS2530,
-        // ================= [ Ожидаемое ключевое слово ]
-
-        // ================= [ Недопустимый символ ]
-
-        // ================= [ Ожидаемая лексема ]
     }
-    public class Error
+    public static class Error
     {
-        public const string SS1000 = "Ожидание символа ";
-        public const string SS1001 = "Ожидаемая лексема";
-        public const string SS1002 = "Ожидание ключ";
-        public const string SS1003 = "Ожидание признак конца строки";
-        public const string SS1004 = "Ожидаемое ключевое слово";
-        public const string SS1005 = "Ожидаемое имя класса\\структуры\\метода";
-        public const string SS1006 = "Ожидаемое имя сборки\\файла";
-        public const string SS1007 = "Недопустимый символа";
-        public const string SS1008 = "Необъявленная структура\\перечесление\\ликсема";
-
+        public static string ConvertToString(this SoulError soul)
+        {
+            // JP - Japan
+            // RU - Russian
+            // EN - English
+            return XDocument.Load($"libSoul-1.5-[{System.Globalization.RegionInfo.CurrentRegion.TwoLetterISORegionName}].xml").Element("SoulLibrary").Element(soul.ToString()).Attribute("value").Value;
+        }
     }
 }
