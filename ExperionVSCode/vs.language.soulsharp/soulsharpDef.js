@@ -39,7 +39,7 @@ define(["require", "exports"], function (require, exports) {
         ],
         // =
         aligments: [
-            'lux', 'aix', 'cad', 'element'
+            'lux', 'aix', 'CAD', 'element'
         ],
         preprocs: [
             'lock'

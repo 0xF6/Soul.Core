@@ -19,48 +19,25 @@ namespace Soul.Core.Types
         pPragma = 0x2,
         pLock = 0x3
     }
-    public enum KeyWord
+    public enum sType : short
     {
-        pAlias,
-        pAbstract,
-        pVoid,
-        pEvent,
-        pThis,
-        pIf,
-        pElse,
-        pInt,
-        pLong
-    }
-    public enum KeyOperators
-    {
-        Plus,
-        Minus,
-        Equals,
-        And,
-        Or
-    }
-    public class Operators
-    {
-
-    }
-    public class Type
-    {
-        
-    }
-    public class PreProc
-    {
-        public static BuildStackMessage TryParce(string str, out PreProcessor p, int line)
-        {
-            try
-            {
-                p = (PreProcessor)Enum.Parse(typeof(PreProcessor), $"p{str}", true);
-                return new BuildStackMessage(line, $"", TypeBuild.Complete);
-            }
-            catch
-            {
-                p = 0;
-                return new BuildStackMessage(line, $"", TypeBuild.Error);
-            }
-        }
+        @short,
+        @int,
+        @long,
+        @string,
+        @byte,
+        @aix,
+        @element,
+        @voix,
+        @class,
+        @gate,
+        @void,
+        @ulong,
+        @object,
+        @event,
+        @protected,
+        @internal,
+        @public,
+        @private
     }
 }
