@@ -10,7 +10,6 @@ using Soul.Core.Build;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 namespace Soul.Core.Types
 {
     public enum PreProcessor : short
