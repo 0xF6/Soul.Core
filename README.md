@@ -1,12 +1,9 @@
 # Soul.Core
-SoulSharp Core (Soul.Core) 
+
+SoulSharp Core (Soul.Core)
 
 Framework S#  
-Является основным компонентом языка
+Core
 
-Зависимости:
- - NET.Core		- 3.5
- - Rc.Core		- 7.5
- 
-Компилятор языка - SSBuild (Soul Sharp Build)  
-https://github.com/CalladaAltr/SSBuild
+Compiler - SSBuild (Soul Sharp Build)  
+https://github.com/0xF6/SSBuild

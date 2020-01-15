@@ -1,31 +1,33 @@
-﻿// =========================================================================//==============================================================//
-//                                                                          //                                                              //
-//                                                                          //             Copyright © Of Fire Twins Wesp 2015              //
-// Author= {"Callada", "Another"}                                           //                                                              //
-// Project="Soul.Language"                                                  //                  Alise Wesp & Yuuki Wesp                     //
-// Version File="1.5"                                                       //                                                              //
-// License="root\\LICENSE", LicenseType="MIT"                               //                                                              //
-// =========================================================================//==============================================================//
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-
-namespace Soul.Core.Rex
+﻿namespace Soul.Core.Rex
 {
     public class RegexBase
     {
         public class PreProc
         {
-            public const string IncludeAssembly     = "(^#(include\\s)(<[a-zA-Z].*\\.dll>))";                               // Include all Assembly     - (mgU)
-            public const string IcludeSoulHeader    = "(^#(include\\s)(['][a-zA-Z].*\\.sh[']|[\"][a-zA-Z].*\\.sh[\"]))";    // Include all Soul Header  - (mgU)
-            public const string PragmaSet           = "(^#(pragma\\s)(lock\\s(\".*\")|metta\\s(\".*\")|key\\s(\".*\")))";   // Setting Soul Assembly    - (Umg)
+            /// <summary>
+            /// Include all Assembly     - (mgU)
+            /// </summary>
+            public const string IncludeAssembly = "(^#(include\\s)(<[a-zA-Z].*\\.dll>))";
+
+            /// <summary>
+            /// Include all Soul Header  - (mgU)
+            /// </summary>
+            public const string IncludeSoulHeader = "(^#(include\\s)(['][a-zA-Z].*\\.sh[']|[\"][a-zA-Z].*\\.sh[\"]))";
+
+            /// <summary>
+            /// Setting Soul Assembly    - (Umg)
+            /// </summary>
+            public const string PragmaSet = "(^#(pragma\\s)(lock\\s(\".*\")|metta\\s(\".*\")|key\\s(\".*\")))";
         }
+
         public class Word
         {
-            public const string Brecket = "(?<=\\[)[^\\[\\]]+(?=\\])"; // [there] - (none)
+            /// <summary>
+            /// [there] - (none)
+            /// </summary>
+            public const string Bracket = "(?<=\\[)[^\\[\\]]+(?=\\])";
         }
+
         public const string MultiLine = "(?m)";
         //x public const string REX_BRECKET_SQAER_MULTILINE = "(?<=\\[)[^\\[\\]]+(?=\\])";
         //x public const string REX_BRECKET_SQARE_ONLYLINE_ARRAY = "\\[([^,\\]]+),([^,\\]]+)\\]";

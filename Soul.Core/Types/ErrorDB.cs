@@ -1,101 +1,104 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-
-namespace Soul.Core.Types
+﻿namespace Soul.Core.Types
 {
+    using System.Xml.Linq;
+
     public enum SoulError
     {
-        //! ================= [ Ожидание символа ]
-        SS1000, // Ожидание символа <
-        SS1001, // Ожидание символа >
-        SS1002, // Ожидание символа "
-        SS1003, // Ожидание символа '
-        SS1004, // Ожидание символа (
-        SS1005, // Ожидание символа )
-        SS1006, // Ожидание символа [
-        SS1007, // Ожидание символа ]
-        SS1008, // Ожидание символа {
-        SS1009, // Ожидание символа }
-        SS1010, // Ожидание символа ,
-        SS1011, // Ожидание символа .
-        SS1012, // Ожидание символа &
-        SS1013, // Ожидание символа *
-        SS1014, // Ожидание символа ^
-        SS1015, // Ожидание символа :
-        SS1016, // Ожидание символа ;
-        SS1017, // Ожидание символа $
-        SS1018, // Ожидание символа !
-        SS1019, // Ожидание символа =
-        SS1020, // Ожидание символа |
-        SS1021, // Ожидание символа -
-        SS1022, // Ожидание символа +
-        SS1023, // Ожидание символа %
-        SS1024, // Ожидание символа ~
-        SS1025, // Ожидание символа @
-        //! ================= [ Ожидаемое ключевое слово ]
-        SS1200, // Ожидаемое ключевое слово void
-        SS1201, // Ожидаемое ключевое слово if
-        SS1202, // Ожидаемое ключевое слово else
-        SS1203, // Ожидаемое ключевое слово null
-        SS1204, // Ожидаемое ключевое слово alias
-        SS1205, // Ожидаемое ключевое слово key
-        SS1206, // Ожидаемое ключевое слово assembly
-        SS1207, // Ожидаемое ключевое слово name
-        SS1208, // Ожидаемое ключевое слово brige
-        SS1209, // Ожидаемое ключевое слово extern
-        SS1210, // Ожидаемое ключевое слово this
-        SS1211, // Ожидаемое ключевое слово base
-        SS1212, // Ожидаемое ключевое слово break
-        SS1213, // Ожидаемое ключевое слово for
-        SS1214, // Ожидаемое ключевое слово while
-        SS1215, // Ожидаемое ключевое слово class
-        SS1216, // Ожидаемое ключевое слово namespace
-        SS1217, // Ожидаемое ключевое слово new
-        SS1218, // Ожидаемое ключевое слово using
-        SS1219, // Ожидаемое ключевое слово return
-        SS1220, // Ожидаемое ключевое слово event
-        //! ================= [ Ожидаемый ключевой алигмент ]
-        SS1500, // Ожидаемый ключевой алигмент lux
-        SS1501, // Ожидаемый ключевой алигмент aix
-        SS1502, // Ожидаемый ключевой алигмент cad
-        SS1503, // Ожидаемый ключевой алигмент element
-        //! ================= [ Ожидаемый препроцессор ]
-        SS1600, // Ожидаемый препроцессор lock
-        SS1601, // Ожидаемый препроцессор key
-        SS1602, // Ожидаемый препроцессор metta
-        //! ================= [ Ожидаемый ключевой контейнер ]
-        SS1700, // Ожидаемый ключевой контейнер catalisator
-        SS1701, // Ожидаемый ключевой контейнер unity
-        SS1702, // Ожидаемый ключевой контейнер await
-        SS1703, // Ожидаемый ключевой контейнер async
-        //! ================= [ Ожидаемое ключевое свойство ]
-        SS1800, // Ожидаемое ключевое свойство int
-        SS1801, // Ожидаемое ключевое свойство string
-        SS1802, // Ожидаемое ключевое свойство gate
-        SS1803, // Ожидаемое ключевое свойство object
-        SS1804, // Ожидаемое ключевое свойство ulong
-        SS1805, // Ожидаемое ключевое свойство short
-        //! ================= [ Ожидаемый ключевой модификатор ]
-        SS2000, // Ожидаемый ключевой модификатор event
-        SS2001, // Ожидаемый ключевой модификатор protected
-        SS2002, // Ожидаемый ключевой модификатор public
-        SS2003, // Ожидаемый ключевой модификатор private
-        SS2004, // Ожидаемый ключевой модификатор internal
+        //! ================= [ Waiting for a symbol ]
+        SS1000, // Waiting for a symbol <
+
+        SS1001, // Waiting for a symbol >
+        SS1002, // Waiting for a symbol "
+        SS1003, // Waiting for a symbol '
+        SS1004, // Waiting for a symbol (
+        SS1005, // Waiting for a symbol )
+        SS1006, // Waiting for a symbol [
+        SS1007, // Waiting for a symbol ]
+        SS1008, // Waiting for a symbol {
+        SS1009, // Waiting for a symbol }
+        SS1010, // Waiting for a symbol ,
+        SS1011, // Waiting for a symbol .
+        SS1012, // Waiting for a symbol &
+        SS1013, // Waiting for a symbol *
+        SS1014, // Waiting for a symbol ^
+        SS1015, // Waiting for a symbol :
+        SS1016, // Waiting for a symbol ;
+        SS1017, // Waiting for a symbol $
+        SS1018, // Waiting for a symbol !
+        SS1019, // Waiting for a symbol =
+        SS1020, // Waiting for a symbol |
+        SS1021, // Waiting for a symbol -
+        SS1022, // Waiting for a symbol +
+        SS1023, // Waiting for a symbol %
+        SS1024, // Waiting for a symbol ~
+        SS1025, // Waiting for a symbol @
+
+        //! ================= [ Expected keyword ]
+        SS1200, // Expected keyword void
+
+        SS1201, // Expected keyword if
+        SS1202, // Expected keyword else
+        SS1203, // Expected keyword null
+        SS1204, // Expected keyword alias
+        SS1205, // Expected keyword key
+        SS1206, // Expected keyword assembly
+        SS1207, // Expected keyword name
+        SS1208, // Expected keyword brige
+        SS1209, // Expected keyword extern
+        SS1210, // Expected keyword this
+        SS1211, // Expected keyword base
+        SS1212, // Expected keyword break
+        SS1213, // Expected keyword for
+        SS1214, // Expected keyword while
+        SS1215, // Expected keyword class
+        SS1216, // Expected keyword namespace
+        SS1217, // Expected keyword new
+        SS1218, // Expected keyword using
+        SS1219, // Expected keyword return
+        SS1220, // Expected keyword event
+
+        //! ================= [ Expected key aligment ]
+        SS1500, // Expected key aligment lux
+
+        SS1501, // Expected key aligment aix
+        SS1502, // Expected key aligment cad
+        SS1503, // Expected key aligment element
+        SS1600, // lock
+        SS1601, // key
+        SS1602, // meta
+        SS1700, // catalisator
+        SS1701, // unity
+        SS1702, // await
+        SS1703, // async
+        SS1800, // int
+        SS1801, // string
+        SS1802, // gate
+        SS1803, // object
+        SS1804, // ulong
+        SS1805, // short
+
+        //! ================= [ Expected key modifier ]
+        SS2000, // Expected key modifier event
+
+        SS2001, // Expected key modifier protected
+        SS2002, // Expected key modifier public
+        SS2003, // Expected key modifier private
+        SS2004, // Expected key modifier internal
+
         //! ================= [ ect ]
-        SS2510, //? Ожидание признака конца строки
-        SS2511, // Ожидание имени класса
-        SS2512, // Ожидание имени алиасы
-        SS2513, // Ожидание имени структуры
-        SS2514, // Ожидание имени алигмента
-        SS2515, // Ожидание имени поля
-        SS2516, // Ожидание имени контейнера
-        SS2517, // Ожидаемое имя класса/структуры/метода
-        SS2518, // Ожидаемое имя сборки/файла
-        SS2520, // Необъявленное поле/перечесление/структура/алигмента
+        SS2510,
+
+        SS2511,
+        SS2512,
+        SS2513,
+        SS2514,
+        SS2515,
+        SS2516,
+        SS2517,
+        SS2518,
+        SS2520,
     }
+
     public static class Error
     {
         public static string ConvertToString(this SoulError soul)
